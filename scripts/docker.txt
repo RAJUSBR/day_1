@@ -1,0 +1,58 @@
+DOCKER
+
+
+DOCKER:-
+Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker’s methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production..
+  What is Docker container..?
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+Container images become containers at runtime and in the case of Docker containers – images become containers when they run on Docker engine. Available for both Linux and Windows-based applications, containerized software will always run the same, regardless of the infrastructure. Containers isolate software from its environment and ensure that it works uniformly despite differences for instance between development and staging.
+	Layers of  images
+	Mostly linux base Image , because of small in size.
+	Application image on top of it.
+What after containers……..?	
+	Own isolated environment
+	Packaged with all needed configurations.
+	One command to install the app
+	Developers and operations work together to package the application in a container 
+	No environmental configuration needed on server.(Except Docker run time)
+ Docker image…?
+ A Docker image is a file used to execute code in a Docker container. Docker images act as a set of instructions to build a Docker container, like a template. Docker images also act as the starting point when using Docker. An image is comparable to a snapshot in virtual machine (VM) environments.
+Some main basic Docker commands…?
+$ docker images
+ 
+	To create container of that Image
+$ docker run <image name> 
+	List of running containers
+$docker ps
+	Delete image
+$ docker rmi <image id>
+	Start new container with a command
+$ docker run -d <image name>
+	Stops the container
+$ docker stop <ID of container>
+	Start the stopped container
+$ docker start <ID of container>
+	Lists of running and stopped containers
+$ docker ps -a
+
+	Port binding  
+$ docker run -p<port of host laptop>: < Container port>
+	Detach mode
+$ docker run -p<port of host laptop>: < Container port> <image         name> -d
+	Logs of the container
+$ docker logs <container Id (or) container name>
+	Get the terminal of a running container
+$ docker exec <Container id> / bin/bash
+     …..for exit  (#  exit)
+Docker file…?
+A Docker file is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.
+	Ex:
+		FROM node
+		ENV  MYSQL_DB_ USERnAME=admin\
+				MYSQL_DB_ PWD= password
+		RUN mkdir -p /home/app
+		COPY. /home/app
+		CMD [“node”,”server.js”]
+	
+
+
